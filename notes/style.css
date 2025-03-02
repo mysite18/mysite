@@ -1,17 +1,16 @@
-/* 画像形式変更ページのスタイル */
-h2 {
-    text-align: center;
+/* メモ帳ページのスタイル */
+textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
     margin-bottom: 20px;
 }
 
-#image-upload {
-    display: block;
-    margin: 0 auto 20px;
-}
-
-.convert-btn {
+.save-btn {
     padding: 15px 30px;
-    background-color: #28a745;
+    background-color: #ffc107;
     color: white;
     border: none;
     border-radius: 5px;
@@ -19,6 +18,9 @@ h2 {
     cursor: pointer;
 }
 
-.convert-btn:hover {
-    background-color: #218838;
+.save-btn:hover {
+    background-color: #e0a800;
 }
+
+
+
