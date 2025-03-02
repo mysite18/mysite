@@ -1,4 +1,4 @@
-const API_URL = 'https://your-glitch-project.glitch.me/api/memos';
+const API_URL = 'https://neon-obtainable-lint.glitch.me/api/memos';
 const PASSWORD = '12345';  // 正しいパスワード（仮）
 
 let currentNoteId = null;
