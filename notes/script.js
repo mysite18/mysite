@@ -17,7 +17,7 @@ async function loadMemos() {
     });
 }
 
-// メモを保存（新規作成）
+// メモを保存（新規作成 or 編集）
 async function saveMemo() {
     const title = document.getElementById('note-title').value;
     const content = document.getElementById('note-text').value;
@@ -48,10 +48,10 @@ async function saveMemo() {
     loadMemos();
 }
 
-// メモを編集
+// メモを編集（タイトルと内容をセット）
 function editMemo(memo) {
     currentNoteId = memo.id;
-    document.getElementById('note-title').value = memo.title;
+    document.getElementById('note-title').value = memo.title;  // ここを修正
     document.getElementById('note-text').value = memo.content;
     document.getElementById('note-section').style.display = 'block';
 }
@@ -69,11 +69,12 @@ async function deleteMemo() {
     loadMemos();
 }
 
+// 新しいメモ作成
 document.getElementById('save-btn').addEventListener('click', saveMemo);
 document.getElementById('delete-btn').addEventListener('click', deleteMemo);
 document.getElementById('new-note-btn').addEventListener('click', () => {
     currentNoteId = null;
-    document.getElementById('note-title').value = '';
+    document.getElementById('note-title').value = '';  // 新規作成時は空に
     document.getElementById('note-text').value = '';
     document.getElementById('note-section').style.display = 'block';
 });
