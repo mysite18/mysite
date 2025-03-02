@@ -38,6 +38,14 @@ body::after {
     height: 100%;
 }
 
+/* 動画ダウンロードページのボタンコンテナ */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* ボタン間のスペース */
+    margin-top: 20px;
+}
+
 /* ボタン */
 button {
     padding: 15px 30px;
