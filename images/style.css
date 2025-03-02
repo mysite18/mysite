@@ -1,3 +1,4 @@
+/* 全体のフォントとレイアウト */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -9,10 +10,18 @@ body {
     background-color: #f4f4f4;
 }
 
+/* コンテナのスタイル */
 .container {
     text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* 最大幅を指定 */
 }
 
+/* ボタンのスタイル */
 button {
     padding: 10px 20px;
     font-size: 16px;
@@ -22,14 +31,40 @@ button {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
+    transition: background-color 0.3s ease;
 }
 
+/* ボタンが無効なとき */
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* ボタンのホバー時 */
 button:hover {
     background-color: #0056b3;
 }
 
+/* 入力フォームとセレクトボックス */
 input, select {
     padding: 10px;
     font-size: 16px;
     margin: 10px 0;
+    width: 100%;  /* フォームとセレクトボックスを親コンテナに合わせて広げる */
+    box-sizing: border-box;  /* 幅にパディングを含める */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* 入力フォームとセレクトボックスのフォーカス時 */
+input:focus, select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* ラベルのスタイル */
+label {
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: inline-block;
 }

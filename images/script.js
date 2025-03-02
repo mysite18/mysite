@@ -1,4 +1,4 @@
-document.getElementById('image-input').addEventListener('change', handleFileSelect);
+document.getElementById('images').addEventListener('change', handleFileSelect);
 document.getElementById('format-select').addEventListener('change', enableDownloadButton);
 document.getElementById('download-btn').addEventListener('click', downloadImage);
 
