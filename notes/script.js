@@ -1,6 +1,6 @@
 // パスワードとメモの管理
 const correctPassword = '12345'; // 正しいパスワード
-let notes = []; // メモのリスト
+let notes = JSON.parse(localStorage.getItem('notes')) || []; // ローカルストレージからメモを読み込む
 let currentNoteIndex = null; // 現在編集中のメモのインデックス
 
 // DOM要素の取得
@@ -78,6 +78,9 @@ saveButton.addEventListener('click', function() {
         notes[currentNoteIndex].content = noteContent;
     }
 
+    // ローカルストレージに保存
+    localStorage.setItem('notes', JSON.stringify(notes));
+
     noteSection.style.display = 'none'; // メモ作成・編集エリアを非表示
     noteListSection.style.display = 'block'; // メモ一覧エリアを表示
     showNoteList(); // メモのリストを更新
@@ -88,6 +91,9 @@ deleteButton.addEventListener('click', function() {
     const confirmation = confirm('本当にこのメモを削除しますか?');
     if (confirmation) {
         notes.splice(currentNoteIndex, 1); // メモを削除
+        // ローカルストレージに保存
+        localStorage.setItem('notes', JSON.stringify(notes));
+
         noteSection.style.display = 'none'; // メモ編集エリアを非表示
         noteListSection.style.display = 'block'; // メモ一覧エリアを表示
         showNoteList(); // メモのリストを更新
