@@ -2,55 +2,57 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    padding: 0;
 }
 
-/* 3×4グリッド */
+/* ヘッダー */
+h1 {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* グリッドレイアウト */
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    width: 80vw;
-    height: 60vh;
-    position: relative;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
 }
 
-/* 各選択肢ボタン */
+/* 選択肢のスタイル */
 .choice {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #333;
-    padding: 10px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.choice button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    user-select: none;
-    transition: 0.3s;
-    background-color: white;
-    font-size: 18px;
-    font-weight: bold;
+    width: 100%;
 }
 
-/* ホバー時のエフェクト */
-.choice:hover {
-    background-color: #f0f0f0;
+.choice button:hover {
+    background-color: #45a049;
 }
 
-/* 各選択肢をグリッドの中央に配置 */
-.choice:nth-child(1) { grid-column: 1; grid-row: 1; display: flex; justify-content: center; align-items: center; }
-.choice:nth-child(2) { grid-column: 2; grid-row: 2; display: flex; justify-content: center; align-items: center; }
-.choice:nth-child(3) { grid-column: 3; grid-row: 3; display: flex; justify-content: center; align-items: center; }
-.choice:nth-child(4) { grid-column: 2; grid-row: 4; display: flex; justify-content: center; align-items: center; }
-
-input {
+/* 入力フィールド */
+#selectedChoice {
+    margin-top: 20px;
     padding: 10px;
+    font-size: 16px;
     width: 80%;
     max-width: 300px;
-    font-size: 16px;
-    text-align: center;
-    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
 }
