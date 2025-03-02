@@ -18,10 +18,18 @@
         <p id="error-message" style="color: red; display: none;">パスワードが間違っています。</p>
     </div>
 
+    <!-- メモリストの表示 -->
+    <div id="note-list-section" style="display: none;">
+        <h2>メモの一覧</h2>
+        <ul id="note-list"></ul>
+        <button id="new-note-btn">新しいメモを作成</button>
+    </div>
+
     <!-- メモ作成・編集セクション -->
     <div id="note-section" style="display: none;">
         <textarea id="note-text" rows="10" cols="30"></textarea><br>
         <button id="save-btn">メモを保存</button>
+        <button id="delete-btn" style="display:none;">メモを削除</button>
     </div>
 
     <script src="script.js"></script>
