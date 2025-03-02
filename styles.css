@@ -32,3 +32,80 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+
+/* 動画ダウンロードページのレイアウト */
+.grid {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 縦横の補助線 */
+.grid::before,
+.grid::after,
+.grid .horizontal-line {
+    content: '';
+    position: absolute;
+    background-color: black;
+}
+
+/* 縦線（ページを左右2等分） */
+.grid::before {
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+}
+
+/* 横線1（ページを上下3等分 - 1本目） */
+.grid::after {
+    top: 33.33%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+}
+
+/* 横線2（ページを上下3等分 - 2本目） */
+.grid .horizontal-line {
+    top: 66.66%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+}
+
+/* ボタンの配置 */
+.button-container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+/* YouTubeボタンの位置（上の交差点） */
+.youtube {
+    top: 33.33%;
+    left: 50%;
+}
+
+/* TikTokボタンの位置（下の交差点） */
+.tiktok {
+    top: 66.66%;
+    left: 50%;
+}
+
+/* ボタン */
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
