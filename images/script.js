@@ -9,7 +9,7 @@ function handleFileSelect(event) {
     const file = event.target.files[0];
     if (file) {
         selectedImage = file;
-        enableDownloadButton();
+        enableDownloadButton();  // 画像が選択されたらボタンを有効に
     }
 }
 
@@ -17,10 +17,13 @@ function enableDownloadButton() {
     const formatSelect = document.getElementById('format-select');
     selectedFormat = formatSelect.value;
     const downloadBtn = document.getElementById('download-btn');
+
     if (selectedImage && selectedFormat) {
         downloadBtn.disabled = false;
+        document.getElementById('error-message').style.display = 'none';  // エラーメッセージを隠す
     } else {
         downloadBtn.disabled = true;
+        document.getElementById('error-message').style.display = 'block';  // エラーメッセージを表示
     }
 }
 
@@ -48,8 +51,16 @@ function downloadImage() {
                 link.download = `converted_image.${selectedFormat.split('/')[1]}`;
                 link.click();
             }, selectedFormat);
-        }
+        };
+        img.onerror = function() {
+            console.error('画像の読み込みに失敗しました');
+            alert('画像の読み込みに失敗しました。再度選択してください。');
+        };
         img.src = event.target.result;
-    }
+    };
+    reader.onerror = function() {
+        console.error('ファイルの読み込みに失敗しました');
+        alert('ファイルの読み込みに失敗しました。再度選択してください。');
+    };
     reader.readAsDataURL(selectedImage);
 }

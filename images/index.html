@@ -13,7 +13,7 @@
     <div class="container">
         <!-- 画像選択フォーム -->
         <input type="file" id="images" accept="image/*">
-
+        
         <!-- 形式選択 -->
         <label for="format-select">形式を選択:</label>
         <select id="format-select">
@@ -24,10 +24,11 @@
 
         <!-- 変換してダウンロードボタン -->
         <button id="download-btn" disabled>ダウンロード</button>
+
+        <div id="error-message" style="color: red; display: none;">画像と形式を選択してください。</div>
     </div>
 
     <script src="script.js"></script>
 
 </body>
 </html>
-
