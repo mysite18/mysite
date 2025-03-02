@@ -3,29 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>メインメニュー</title>
+    <title>ナビゲーションページ</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- 上部左 -->
-    <div id="top-left">
-        <button onclick="location.href='videos/'">動画をダウンロード</button>
-    </div>
-
-    <!-- 上部右 -->
-    <div id="top-right">
-        <button onclick="location.href='images/'">画像ファイルの形式を変更</button>
-    </div>
-
-    <!-- 下部左 -->
-    <div id="bottom-left">
-        <button onclick="location.href='notes/'">メモ帳</button>
-    </div>
-
-    <!-- 下部右 -->
-    <div id="bottom-right">
-        <button onclick="location.href='other/'">その他の機能</button>
+    <div class="container">
+        <div class="menu-item">
+            <a href="/video-download">動画ダウンロード</a>
+        </div>
+        <div class="menu-item">
+            <a href="/image-conversion">画像形式変更</a>
+        </div>
+        <div class="menu-item">
+            <a href="/memo">メモ帳</a>
+        </div>
     </div>
 
 </body>

@@ -1,73 +1,35 @@
-/* 基本スタイル */
+/* 共通スタイル */
 body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: grid;
-    grid-template-columns: 50% 50%; /* 横2分割 */
-    grid-template-rows: 50% 50%; /* 縦2分割 */
-    height: 100vh; /* 画面全体の高さを使う */
-    font-family: Arial, sans-serif;
-    background-color: white; /* 背景色を白に */
-}
-
-/* 各セクション（背景色なしに） */
-#top-left, #top-right, #bottom-left, #bottom-right {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 18px;
-    border: none; /* 境界線を削除 */
-}
-
-/* ボタン */
-button {
-    padding: 15px 30px;
-    font-size: 18px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-button:hover {
-    background-color: #0056b3;
-}
-
-
-
-body {
-    margin: 0;
-    padding: 0;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* 垂直方向の中央揃え */
+    background-color: #f0f0f0;
 }
 
-/* TikTokボタン（左中央） */
-.tiktok-btn {
-    text-align: left;
-    padding-left: 10%;
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
 }
 
-/* YouTubeボタン（右中央） */
-.youtube-btn {
-    text-align: right;
-    padding-right: 10%;
+.menu-item {
+    text-align: center;
 }
 
-/* ボタンのスタイル */
-.download-btn {
-    padding: 15px 30px;
-    font-size: 18px;
+.menu-item a {
+    display: block;
+    padding: 20px;
     background-color: #007BFF;
     color: white;
-    border: none;
+    text-decoration: none;
     border-radius: 5px;
-    cursor: pointer;
+    font-size: 18px;
 }
 
-/* ホバー時 */
-.download-btn:hover {
+.menu-item a:hover {
     background-color: #0056b3;
 }

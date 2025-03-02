@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>メモ帳</title>
+    <title>画像形式変更</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>メモ帳ページ</h1>
-    <p>ここにメモ帳機能を追加できます。</p>
-    <a href="../">← トップへ戻る</a>
+
+    <div class="container">
+        <h2>画像ファイルを選んで形式を変更します</h2>
+        <input type="file" id="image-upload" accept="image/*">
+        <button class="convert-btn">形式を変更</button>
+    </div>
+
 </body>
 </html>

@@ -1,0 +1,24 @@
+/* 画像形式変更ページのスタイル */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#image-upload {
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.convert-btn {
+    padding: 15px 30px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.convert-btn:hover {
+    background-color: #218838;
+}
