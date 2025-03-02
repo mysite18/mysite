@@ -3,16 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>メモ帳</title>
+    <title>パスワード付きメモアプリ</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="container">
-        <textarea id="notes" rows="10" placeholder="ここにメモを書いてください..."></textarea>
-        <button class="save-btn">メモを保存</button>
+    <h1>メモアプリ</h1>
+
+    <!-- パスワード入力フォーム -->
+    <div id="password-section">
+        <label for="password">パスワードを入力してください：</label>
+        <input type="password" id="password">
+        <button id="login-btn">ログイン</button>
+        <p id="error-message" style="color: red; display: none;">パスワードが間違っています。</p>
     </div>
+
+    <!-- メモ作成・編集セクション -->
+    <div id="note-section" style="display: none;">
+        <textarea id="note-text" rows="10" cols="30"></textarea><br>
+        <button id="save-btn">メモを保存</button>
+    </div>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
-

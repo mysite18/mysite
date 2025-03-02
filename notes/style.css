@@ -1,26 +1,27 @@
-/* メモ帳ページのスタイル */
-textarea {
-    width: 100%;
-    padding: 15px;
-    font-size: 18px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+#password-section {
     margin-bottom: 20px;
 }
 
-.save-btn {
-    padding: 15px 30px;
-    background-color: #ffc107;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
+#note-section {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px;
     cursor: pointer;
 }
 
-.save-btn:hover {
-    background-color: #e0a800;
+textarea {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
 }
+
 
 
 
