@@ -8,12 +8,27 @@
 </head>
 <body>
 
+    <h1>画像形式変更</h1>
+
     <div class="container">
-        <h2>画像ファイルを選んで形式を変更します</h2>
-        <input type="file" id="images" accept="image/*">
-        <button class="convert-btn">形式を変更</button>
+        <!-- 画像選択フォーム -->
+        <input type="file" id="image-input" accept="image/*">
+        
+        <!-- 形式選択 -->
+        <label for="format-select">形式を選択:</label>
+        <select id="format-select">
+            <option value="image/jpeg">JPEG</option>
+            <option value="image/png">PNG</option>
+            <option value="image/webp">WEBP</option>
+        </select>
+
+        <!-- 変換してダウンロードボタン -->
+        <button id="download-btn" disabled>ダウンロード</button>
     </div>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
+
 
