@@ -3,17 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube動画ダウンロード</title>
-    <link rel="stylesheet" href="../../styles.css">
+    <title>YouTube 動画ダウンロード</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
-    <h1>YouTube動画ダウンロード</h1>
-    <p>ここにYouTubeの動画をダウンロードする機能を追加できます。</p>
+    <div class="container">
+        <h1>YouTube 動画ダウンロード</h1>
+        <p>動画のURLを入力してください。</p>
+        
+        <input type="text" id="youtube-url" placeholder="YouTube動画のURLを入力">
+        <button class="download-btn" onclick="downloadYouTube()">ダウンロード</button>
+        
+        <div id="download-link" style="display: none;">
+            <p>ダウンロードリンク: <a id="link" href="#" target="_blank">ここをクリック</a></p>
+        </div>
+    </div>
 
-    <br>
-    <a href="../">← 動画ダウンロードへ戻る</a> |
-    <a href="../../">← トップへ戻る</a>
+    <script>
+        function downloadYouTube() {
+            const url = document.getElementById('youtube-url').value;
+            
+            // YouTubeの動画URLを解析して、ダウンロードリンクを生成する処理
+            // 実際にはYouTubeの動画URLから動画をダウンロードするにはサーバーサイドでの処理が必要
+            
+            if (url.includes('youtube.com')) {
+                // 仮にダウンロードリンクを生成
+                const downloadUrl = `https://youtube-dl.example.com/download?video_url=${encodeURIComponent(url)}`;
+                
+                // ダウンロードリンクを表示
+                document.getElementById('download-link').style.display = 'block';
+                document.getElementById('link').href = downloadUrl;
+            } else {
+                alert('YouTubeのURLを入力してください');
+            }
+        }
+    </script>
 
 </body>
 </html>

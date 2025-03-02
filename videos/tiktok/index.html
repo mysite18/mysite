@@ -3,17 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TikTok動画ダウンロード</title>
-    <link rel="stylesheet" href="../../styles.css">
+    <title>TikTok 動画ダウンロード</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
-    <h1>TikTok動画ダウンロード</h1>
-    <p>ここにTikTokの動画をダウンロードする機能を追加できます。</p>
+    <div class="container">
+        <h1>TikTok 動画ダウンロード</h1>
+        <p>動画のURLを入力してください。</p>
+        
+        <input type="text" id="tiktok-url" placeholder="TikTok動画のURLを入力">
+        <button class="download-btn" onclick="downloadTikTok()">ダウンロード</button>
+        
+        <div id="download-link" style="display: none;">
+            <p>ダウンロードリンク: <a id="link" href="#" target="_blank">ここをクリック</a></p>
+        </div>
+    </div>
 
-    <br>
-    <a href="../">← 動画ダウンロードへ戻る</a> |
-    <a href="../../">← トップへ戻る</a>
+    <script>
+        function downloadTikTok() {
+            const url = document.getElementById('tiktok-url').value;
+            
+            // ここではTikTokの動画URLを解析して、ダウンロードリンクを生成する処理を追加します
+            // 仮にURLを変換してダウンロードリンクを作成する処理（サーバーサイドで実行されるべき）を考えます
+
+            // URLが正しいか簡単なチェック
+            if (url.includes('tiktok.com')) {
+                // ダウンロードリンクを仮に設定（実際のダウンロードリンクをサーバーサイドで取得する必要があります）
+                const downloadUrl = `https://api.tiktok.com/download?video_url=${encodeURIComponent(url)}`;
+                
+                // ダウンロードリンクを表示
+                document.getElementById('download-link').style.display = 'block';
+                document.getElementById('link').href = downloadUrl;
+            } else {
+                alert('TikTokのURLを入力してください');
+            }
+        }
+    </script>
 
 </body>
 </html>
