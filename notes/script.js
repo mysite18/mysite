@@ -1,8 +1,21 @@
-const API_URL = 'https://neon-obtainable-lint.glitch.me/api/memos';
+const API_URL = 'https://your-glitch-project.glitch.me/api/memos';
+const PASSWORD = '12345';  // 正しいパスワード（仮）
 
 let currentNoteId = null;
 
-// メモを取得
+// ログイン処理
+document.getElementById('login-btn').addEventListener('click', () => {
+    const enteredPassword = document.getElementById('password').value;
+    if (enteredPassword === PASSWORD) {
+        document.getElementById('password-section').style.display = 'none';
+        document.getElementById('note-list-section').style.display = 'block';
+        loadMemos();
+    } else {
+        document.getElementById('error-message').style.display = 'block';
+    }
+});
+
+// メモ一覧を取得
 async function loadMemos() {
     const response = await fetch(API_URL);
     const memos = await response.json();
@@ -78,5 +91,3 @@ document.getElementById('new-note-btn').addEventListener('click', () => {
     document.getElementById('note-text').value = '';
     document.getElementById('note-section').style.display = 'block';
 });
-
-loadMemos();
