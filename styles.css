@@ -34,36 +34,30 @@ button:hover {
 }
 
 
-/* 基本レイアウト（4等分） */
+/* 基本レイアウト（左右2分割） */
 .grid {
     display: grid;
     grid-template-columns: 50% 50%; /* 横2分割 */
-    grid-template-rows: 50% 50%; /* 縦2分割 */
     height: 100vh;
-    position: relative;
 }
 
-/* 各セクション（四分割用） */
+/* 各セクション */
 .section {
-    border: 1px solid #000; /* 4等分の補助線 */
+    display: flex;
+    align-items: center; /* 垂直方向の中央揃え */
+    height: 100%;
 }
 
-/* ボタンの配置 */
-.button-container {
-    position: absolute;
-    transform: translate(-50%, -50%);
+/* 左エリアのボタンを左中央に配置 */
+.section.left {
+    text-align: left;
+    padding-left: 10%;
 }
 
-/* 左中央（TikTokボタン） */
-.button-container.left {
-    top: 50%;
-    left: 25%;
-}
-
-/* 右中央（YouTubeボタン） */
-.button-container.right {
-    top: 50%;
-    left: 75%;
+/* 右エリアのボタンを右中央に配置 */
+.section.right {
+    text-align: right;
+    padding-right: 10%;
 }
 
 /* ボタンのスタイル */
@@ -81,4 +75,3 @@ button:hover {
 .download-btn:hover {
     background-color: #0056b3;
 }
-
