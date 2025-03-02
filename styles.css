@@ -3,47 +3,20 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
-    height: 100vh;
-    position: relative;
+    grid-template-columns: 50% 50%; /* 横2分割 */
+    grid-template-rows: 50% 50%; /* 縦2分割 */
+    height: 100vh; /* 画面全体の高さを使う */
     font-family: Arial, sans-serif;
+    background-color: white; /* 背景色を白に */
 }
 
-/* 各セクション */
+/* 各セクション（背景色なしに） */
 #top-left, #top-right, #bottom-left, #bottom-right {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ccc;
     font-size: 18px;
-}
-
-/* 補助線 */
-body::before, body::after {
-    content: '';
-    position: absolute;
-    background-color: black;
-}
-body::before {
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 1px;
-}
-body::after {
-    top: 0;
-    left: 50%;
-    width: 1px;
-    height: 100%;
-}
-
-/* 動画ダウンロードページのボタンコンテナ */
-.button-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* ボタン間のスペース */
-    margin-top: 20px;
+    border: none; /* 境界線を削除 */
 }
 
 /* ボタン */
