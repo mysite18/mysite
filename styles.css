@@ -1,87 +1,35 @@
 /* 基本スタイル */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
     margin: 0;
     padding: 0;
-    position: relative; /* 絶対位置で補助線を配置するため */
-    height: 100vh; /* 画面全体の高さを確保 */
-}
-
-/* ヘッダー */
-h1 {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
-/* グリッドレイアウト */
-.grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
-    padding: 20px;
-    position: relative;
-    height: 400px;
+    grid-template-columns: 50% 50%; /* 横に2つのカラム */
+    grid-template-rows: 50% 50%; /* 縦に2つの行 */
+    height: 100vh; /* 画面全体の高さを使う */
 }
 
-/* 選択肢のスタイル */
-.choice {
+/* 各セクションのスタイル */
+#top-left, #top-right, #bottom-left, #bottom-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
     background-color: #f2f2f2;
-    padding: 20px;
-    text-align: center;
     border: 1px solid #ccc;
-    border-radius: 5px;
 }
 
-.choice button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px 30px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
+#top-left {
+    background-color: lightblue;
 }
 
-.choice button:hover {
-    background-color: #45a049;
+#top-right {
+    background-color: lightgreen;
 }
 
-/* 入力フィールド */
-#selectedChoice {
-    margin-top: 20px;
-    padding: 10px;
-    font-size: 16px;
-    width: 80%;
-    max-width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+#bottom-left {
+    background-color: lightcoral;
 }
 
-/* 縦横の補助線（十字線） */
-body::before,
-body::after {
-    content: '';
-    position: absolute;
-    background-color: #000;
-}
-
-/* 横線（中央） */
-body::before {
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 1px;
-}
-
-/* 縦線（中央） */
-body::after {
-    top: 0;
-    left: 50%;
-    height: 100%;
-    width: 1px;
+#bottom-right {
+    background-color: lightyellow;
 }
