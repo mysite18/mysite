@@ -1,26 +1,25 @@
-/* コンテナを横並びにする */
+/* コンテナの設定 */
 .container {
     display: flex; /* 横並びにする */
-    justify-content: space-between; /* 均等に配置 */
-    padding: 20px;
+    justify-content: space-around; /* 均等に配置 */
+    align-items: center; /* 高さ方向に中央揃え */
+    height: 100vh; /* 画面の高さ全体を使う */
 }
 
-/* 各メニューアイテムのスタイル */
+/* 各メニューアイテムの設定 */
 .menu-item {
-    flex: 1; /* 各メニューアイテムを均等に配置 */
-    text-align: center; /* アイテムのテキストを中央に配置 */
+    text-align: center; /* アイテム内のリンクを中央に配置 */
 }
 
 /* メニューリンクのスタイル */
 .menu-item a {
     display: block;
-    padding: 10px 20px;
+    padding: 15px 30px;
     font-size: 18px;
     text-decoration: none;
     background-color: #007BFF;
     color: white;
     border-radius: 5px;
-    text-align: center;
 }
 
 .menu-item a:hover {
