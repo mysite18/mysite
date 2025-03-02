@@ -10,24 +10,29 @@ body {
     background-color: #f0f0f0;
 }
 
+/* コンテナを横並びにする */
 .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
+    display: flex; /* 横並びにする */
+    justify-content: space-between; /* 均等に配置 */
+    padding: 20px;
 }
 
+/* 各メニューアイテムのスタイル */
 .menu-item {
-    text-align: center;
+    flex: 1; /* 各メニューアイテムを均等に配置 */
+    text-align: center; /* アイテムのテキストを中央に配置 */
 }
 
+/* メニューリンクのスタイル */
 .menu-item a {
     display: block;
-    padding: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
     background-color: #007BFF;
     color: white;
-    text-decoration: none;
     border-radius: 5px;
-    font-size: 18px;
+    text-align: center;
 }
 
 .menu-item a:hover {
