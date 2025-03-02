@@ -25,6 +25,10 @@ function enableDownloadButton() {
 }
 
 function downloadImage() {
+    if (!selectedImage || !selectedFormat) {
+        return;  // 画像または形式が選択されていない場合は処理しない
+    }
+
     const reader = new FileReader();
     reader.onload = function(event) {
         const img = new Image();
