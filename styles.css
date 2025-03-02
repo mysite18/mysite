@@ -1,8 +1,11 @@
+/* 基本スタイル */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
+    position: relative; /* 絶対位置で補助線を配置するため */
+    height: 100vh; /* 画面全体の高さを確保 */
 }
 
 /* ヘッダー */
@@ -19,6 +22,8 @@ h1 {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
     padding: 20px;
+    position: relative;
+    height: 400px;
 }
 
 /* 選択肢のスタイル */
@@ -55,4 +60,28 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
+}
+
+/* 縦横の補助線（十字線） */
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    background-color: #000;
+}
+
+/* 横線（中央） */
+body::before {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+}
+
+/* 縦線（中央） */
+body::after {
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 1px;
 }
