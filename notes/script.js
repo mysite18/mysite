@@ -17,18 +17,28 @@ document.getElementById('login-btn').addEventListener('click', () => {
 
 // メモ一覧を取得
 async function loadMemos() {
-    const response = await fetch(API_URL);
-    const memos = await response.json();
-    const memoList = document.getElementById('note-list');
-    memoList.innerHTML = '';
+    try {
+        const response = await fetch(API_URL);
+        const memos = await response.json();
+        console.log(memos);  // 追加: memosの内容を確認
+        if (Array.isArray(memos)) {
+            const memoList = document.getElementById('note-list');
+            memoList.innerHTML = '';
 
-    memos.forEach(memo => {
-        const li = document.createElement('li');
-        li.textContent = memo.title;
-        li.onclick = () => editMemo(memo);
-        memoList.appendChild(li);
-    });
+            memos.forEach(memo => {
+                const li = document.createElement('li');
+                li.textContent = memo.title;
+                li.onclick = () => editMemo(memo);
+                memoList.appendChild(li);
+            });
+        } else {
+            console.error("Received data is not an array", memos);
+        }
+    } catch (error) {
+        console.error('Error loading memos:', error);
+    }
 }
+
 
 // メモを保存（新規作成 or 編集）
 async function saveMemo() {
