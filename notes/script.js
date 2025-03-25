@@ -1,16 +1,32 @@
 const API_URL = 'https://neon-obtainable-lint.glitch.me/api/memos';
+const API_URL2 = 'https://neon-obtainable-lint.glitch.me/api/validate';
 const PASSWORD = '12345';  // 正しいパスワード（仮）
 
 let currentNoteId = null;
 
 // ログイン処理
-document.getElementById('login-btn').addEventListener('click', () => {
+document.getElementById('login-btn').addEventListener('click', async () => {
     const enteredPassword = document.getElementById('password').value;
-    if (enteredPassword === PASSWORD) {
-        document.getElementById('password-section').style.display = 'none';
-        document.getElementById('note-list-section').style.display = 'block';
-        loadMemos();
-    } else {
+
+    try {
+        const response = await fetch(API_URL2, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ key: enteredPassword })
+        });
+
+        const data = await response.json();
+        const TorF = data.valid;
+        if (TorF) {
+            document.getElementById('password-section').style.display = 'none';
+            document.getElementById('note-list-section').style.display = 'block';
+            loadMemos();
+        } else if (!TorF){
+            document.getElementById('error-message').style.display = 'block';
+        }
+    } catch (error) {
         document.getElementById('error-message').style.display = 'block';
     }
 });
