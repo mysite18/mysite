@@ -93,6 +93,7 @@ function editMemo(memo) {
     document.getElementById('note-title').value = memo.title;  // ここを修正
     document.getElementById('note-text').value = memo.content;
     document.getElementById('note-section').style.display = 'block';
+    document.getElementById('delete-btn').style.display = 'block';
 }
 
 // メモを削除
@@ -116,4 +117,5 @@ document.getElementById('new-note-btn').addEventListener('click', () => {
     document.getElementById('note-title').value = '';  // 新規作成時は空に
     document.getElementById('note-text').value = '';
     document.getElementById('note-section').style.display = 'block';
+    document.getElementById('delete-btn').style.display = 'none';
 });
