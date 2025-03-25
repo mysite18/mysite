@@ -90,10 +90,10 @@ async function saveMemo() {
 // メモを編集（タイトルと内容をセット）
 function editMemo(memo) {
     currentNoteId = memo.id;
-    document.getElementById('note-title').value = memo.title;  // ここを修正
+    document.getElementById('note-title').value = memo.title;
     document.getElementById('note-text').value = memo.content;
     document.getElementById('note-section').style.display = 'block';
-    document.getElementById('delete-btn').style.display = 'block';
+    document.getElementById('delete-btn').style.display = 'block'; // ← メモを選択したときだけ削除ボタンを表示
 }
 
 // メモを削除
@@ -106,16 +106,18 @@ async function deleteMemo() {
 
     currentNoteId = null;
     document.getElementById('note-section').style.display = 'none';
+    document.getElementById('delete-btn').style.display = 'none'; // ← 削除後にボタンを隠す
     loadMemos();
 }
 
-// 新しいメモ作成
 document.getElementById('save-btn').addEventListener('click', saveMemo);
 document.getElementById('delete-btn').addEventListener('click', deleteMemo);
+
+// 新しいメモ作成
 document.getElementById('new-note-btn').addEventListener('click', () => {
     currentNoteId = null;
     document.getElementById('note-title').value = '';  // 新規作成時は空に
     document.getElementById('note-text').value = '';
     document.getElementById('note-section').style.display = 'block';
-    document.getElementById('delete-btn').style.display = 'none';
+    document.getElementById('delete-btn').style.display = 'none'; // ← 新規作成時は削除ボタンを非表示
 });
