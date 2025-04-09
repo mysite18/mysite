@@ -21,7 +21,7 @@
     </div>
 
     <script>
-        function downloadTikTok() {
+        /*function downloadTikTok() {
             const url = document.getElementById('tiktok-url').value;
             
             // ここではTikTokの動画URLを解析して、ダウンロードリンクを生成する処理を追加します
@@ -35,6 +35,37 @@
                 // ダウンロードリンクを表示
                 document.getElementById('download-link').style.display = 'block';
                 document.getElementById('link').href = downloadUrl;
+            } else {
+                alert('TikTokのURLを入力してください');
+            }
+        }*/
+        function downloadTikTok() {
+            const url = document.getElementById('tiktok-url').value;
+            
+            // TikTokの動画URLを解析して、ダウンロードリンクを生成する処理
+            if (url.includes('tiktok.com')) {
+                // サードパーティAPI（ssstik.io）を使用して動画URLを取得
+                fetch('https://tikcdn.io/ssstik/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ url: url })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data.video_url) {
+                        // ダウンロードリンクを表示
+                        document.getElementById('download-link').style.display = 'block';
+                        document.getElementById('link').href = data.video_url;  // 取得した動画URL
+                    } else {
+                        alert('動画のダウンロードリンクを取得できませんでした。');
+                    }
+                })
+                .catch(error => {
+                    console.error('エラーが発生しました:', error);
+                    alert('エラーが発生しました。もう一度試してください。');
+                });
             } else {
                 alert('TikTokのURLを入力してください');
             }
