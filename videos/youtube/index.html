@@ -17,15 +17,19 @@
     </div>
 
     <script>
-        document.getElementById('download-btn').addEventListener('click', function() {
-            const url = document.getElementById('youtube-url').value;
+        const url = document.getElementById('youtube-url').value;
             if (url) {
                 // サーバーのダウンロードURLにリクエストを送信
-                window.location.href = `http://neon-obtainable-lint.glitch.me/api/download?url=${encodeURIComponent(url)}`;
+                const downloadUrl = `http://localhost:3000/api/download?url=${encodeURIComponent(url)}`;
+                
+                // 動画のダウンロードをトリガー
+                const link = document.createElement('a');
+                link.href = downloadUrl;
+                link.setAttribute('download', ''); // 'download'属性を追加してダウンロードをトリガー
+                link.click();
             } else {
                 alert('URLを入力してください');
             }
-        });
     </script>
 
 </body>
