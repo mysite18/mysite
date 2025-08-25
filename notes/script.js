@@ -1,6 +1,5 @@
-const API_URL = 'https://neon-obtainable-lint.glitch.me/api/memos';
-const API_URL2 = 'https://neon-obtainable-lint.glitch.me/api/validate';
-const PASSWORD = '12345';  // 正しいパスワード（仮）
+const API_URL = 'https://msa-q0rd.onrender.com/api/memos';
+const API_URL2 = 'https://msa-q0rd.onrender.com/api/validate';
 
 let currentNoteId = null;
 
